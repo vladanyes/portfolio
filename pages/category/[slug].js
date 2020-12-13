@@ -1,7 +1,7 @@
-import Articles from "../../components/articles";
-import { fetchAPI } from "../../lib/api";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
+import Articles from '../../components/articles';
+import { fetchAPI } from '../../lib/api';
+import Layout from '../../components/layout';
+import Seo from '../../components/seo';
 
 const Category = ({ category, categories }) => {
   const seo = {
@@ -23,7 +23,7 @@ const Category = ({ category, categories }) => {
 };
 
 export async function getStaticPaths() {
-  const categories = await fetchAPI("/categories");
+  const categories = await fetchAPI('/categories');
 
   return {
     paths: categories.map((category) => ({
@@ -37,7 +37,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const category = (await fetchAPI(`/categories?slug=${params.slug}`))[0];
-  const categories = await fetchAPI("/categories");
+  const categories = await fetchAPI('/categories');
 
   return {
     props: { category, categories },

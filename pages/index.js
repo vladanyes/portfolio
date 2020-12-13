@@ -1,35 +1,31 @@
-import React from "react";
-import Articles from "../components/articles";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import { fetchAPI } from "../lib/api";
+import React from 'react';
+import Articles from '../components/articles';
+import Layout from '../components/layout';
+import { fetchAPI } from '../lib/api';
 
-const Home = ({ articles, categories, homepage }) => {
+export async function getStaticProps() {
+  const posts = await fetchAPI('/posts');
+  const categories = await fetchAPI('/categories');
+  const tags = await fetchAPI('/tags');
+
+  return {
+    props: {
+      posts,
+      categories,
+      tags,
+    },
+    revalidate: 1,
+  };
+}
+export default function Home({ posts, categories, tags }) {
   return (
     <Layout categories={categories}>
-      <Seo seo={homepage.seo} />
       <div className="uk-section">
         <div className="uk-container uk-container-large">
-          <h1>{homepage.hero.title}</h1>
-          <Articles articles={articles} />
+          <h1>Blog</h1>
+          <Articles articles={posts} />
         </div>
       </div>
     </Layout>
   );
-};
-
-export async function getStaticProps() {
-  // Run API calls in parallel
-  const [articles, categories, homepage] = await Promise.all([
-    fetchAPI("/articles?status=published"),
-    fetchAPI("/categories"),
-    fetchAPI("/homepage"),
-  ]);
-
-  return {
-    props: { articles, categories, homepage },
-    revalidate: 1,
-  };
 }
-
-export default Home;
