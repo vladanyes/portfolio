@@ -8,7 +8,7 @@ const Category = ({ category, categories }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{category.name}</h1>
-          <Articles articles={category.articles} />
+          <Articles posts={category.posts} />
         </div>
       </div>
     </Layout>
