@@ -17,13 +17,14 @@ export async function getStaticProps() {
     revalidate: 1,
   };
 }
+
 export default function Home({ posts, categories, tags }) {
   return (
     <Layout categories={categories}>
       <div className="uk-section">
         <div className="uk-container uk-container-large">
-          <h1>Blog</h1>
-          <Articles articles={posts} />
+          <h1>Blog demo</h1>
+          <Articles posts={posts} />
         </div>
       </div>
     </Layout>

@@ -4,7 +4,7 @@ import Image from './image';
 
 const Card = ({ article }) => {
   return (
-    <Link as={`/article/${article.slug}`} href="/article/[id]">
+    <Link as={`/posts/${article.id}`} href="/posts/[id]">
       <a className="uk-link-reset">
         <div className="uk-card uk-card-muted">
           <div className="uk-card-media-top">
