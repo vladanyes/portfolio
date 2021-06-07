@@ -1,18 +1,19 @@
 import Head from 'next/head';
-import { useContext } from 'react';
-import { GlobalContext } from '../pages/_app';
+// import { useContext } from 'react';
+// import { GlobalContext } from '../pages/_app';
 import { getStrapiMedia } from '../lib/media';
 
+// todo: refactor seo later
 const Seo = ({ seo }) => {
-  const { defaultSeo, siteName } = useContext(GlobalContext);
+  // const { defaultSeo, siteName } = useContext(GlobalContext);
   const seoWithDefaults = {
-    ...defaultSeo,
+    // ...defaultSeo,
     ...seo,
   };
   const fullSeo = {
     ...seoWithDefaults,
     // Add title suffix
-    metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
+    metaTitle: `${seoWithDefaults.metaTitle} | Vlad Ryabinin`,
     // Get full image URL
     shareImage: getStrapiMedia(seoWithDefaults.shareImage),
   };

@@ -1,9 +1,10 @@
 import React from 'react';
-import Nav from './nav';
+import Nav from './navigation';
 
+// todo: refactor nav later
 const Layout = ({ children, categories }) => (
   <>
-    <Nav categories={categories} />
+    {/* <Nav categories={categories} /> */}
     {children}
   </>
 );

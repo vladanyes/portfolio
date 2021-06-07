@@ -1,6 +1,6 @@
-import Articles from '../../components/articles';
-import { fetchAPI } from '../../lib/api';
-import Layout from '../../components/layout';
+import Articles from '../../../components/articles';
+import { fetchAPI } from '../../../lib/api';
+import Layout from '../../../components/layout';
 
 const Category = ({ category, categories }) => {
   return (
