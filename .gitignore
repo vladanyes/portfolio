@@ -114,5 +114,6 @@ build
 
 .vscode
 .next
+.env
 .env.*
 !.env.example
