@@ -1,17 +1,20 @@
 import React from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { getDatabase } from '../../lib/notion';
-// import { Text } from "./[id].js";
 
 export default function Home({ pages }) {
-  // console.table(pages);
+  console.table(pages);
 
   return (
-    <div>
+    <ol>
       {pages.map((page) => {
-        return <div key={page.id}>{JSON.stringify(page)}</div>;
+        return (
+          <li key={page.id}>
+            <Link href={`/notion/posts/${page.id}`}>{page.properties.Title.title[0]?.plain_text}</Link>
+          </li>
+        );
       })}
-    </div>
+    </ol>
   );
 }
 
