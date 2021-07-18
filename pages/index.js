@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Particles from 'react-tsparticles';
@@ -28,15 +28,34 @@ const itemBottom = {
 };
 
 export default function Home() {
+  const [vh, setVh] = useState(0);
   const classes = useStyles();
 
+  useEffect(() => {
+    const changeVh = () => {
+      setVh(window.innerHeight);
+    };
+    // changeVh();
+    setTimeout(changeVh, 0);
+
+    window.addEventListener('resize', changeVh);
+    return () => {
+      window.removeEventListener('resize', changeVh);
+    };
+  }, []);
+
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} style={{ height: vh }}>
       <Head>
         <title>Vlad Ryabinin | Senior-Front-End Developer</title>
       </Head>
       <div className={classes.container}>
-        <Particles id="tsparticles" canvasClassName={classes.particles} options={particlesConfig} />
+        <Particles
+          key={vh}
+          id="tsparticles"
+          canvasClassName={classes.particles}
+          options={particlesConfig}
+        />
         <div className={classes.boxLeft}>
           <motion.ul initial="hidden" animate="visible" variants={list} className={classes.list}>
             <motion.li
