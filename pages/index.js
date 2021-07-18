@@ -89,7 +89,18 @@ export default function Home() {
 const media_mobile = '@media screen and (max-width: 960px)';
 
 const useStyles = createUseStyles({
+  '@global': {
+    body: {
+      margin: 0,
+      padding: 0,
+    },
+    a: {
+      textDecoration: 'none',
+    },
+  },
   wrapper: {
+    fontFamily: 'Noto Sans JP, sans-serif',
+    fontWeight: 300,
     position: 'relative',
     margin: 0,
     padding: 0,
@@ -127,12 +138,14 @@ const useStyles = createUseStyles({
   boxRight: {
     width: '50%',
     display: 'flex',
-    padding: '25px 25px 0 0',
+    padding: '20px 25px 0 0',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
     [media_mobile]: {
       width: '100%',
       order: 0,
+      justifyContent: 'center',
+      padding: '15px 0 20px 0',
     },
   },
   list: {

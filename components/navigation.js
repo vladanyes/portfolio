@@ -1,10 +1,9 @@
-import React, { memo, useState } from 'react';
+import React, { memo } from 'react';
 import { createUseStyles } from 'react-jss';
 import cn from 'classnames';
 
 const Navigation = () => {
   const classes = useStyles();
-  const { isOpen, setIsOpen } = useState();
 
   return (
     <ul className={classes.nav}>
@@ -14,17 +13,34 @@ const Navigation = () => {
       {/*</a>*/}
       {/*</li>*/}
       <li className={classes.navItem}>
+        <a
+          href="https://dev.to/vladanyes"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          className={classes.link}
+        >
+          blog
+        </a>
+      </li>
+      <li className={classes.navItem}>
+        <a className={cn(classes.link, classes.disabled)}>projects</a>
+      </li>
+      <li className={classes.navItem}>
         <a href="/cv.pdf" target="_blank" className={classes.link}>
           cv
         </a>
       </li>
-      <li className={cn(classes.navItem, classes.icon)}>i</li>
+      {/*<li className={cn(classes.navItem, classes.icon)}>i</li>*/}
     </ul>
   );
 };
 
 const useStyles = createUseStyles({
+  disabled: {
+    cursor: 'not-allowed',
+  },
   nav: {
+    fontFamily: 'Zen Tokyo Zoo',
     zIndex: 1,
     paddingInlineStart: 0,
     marginBlockStart: 0,
