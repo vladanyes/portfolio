@@ -25,11 +25,11 @@ const Navigation = () => {
       <li className={classes.navItem}>
         <a className={cn(classes.link, classes.disabled)}>projects</a>
       </li>
-      <li className={classes.navItem}>
-        <a href="/cv.pdf" target="_blank" className={classes.link}>
-          cv
-        </a>
-      </li>
+      {/*<li className={classes.navItem}>*/}
+      {/*  <a href="/cv.pdf" target="_blank" className={classes.link}>*/}
+      {/*    cv*/}
+      {/*  </a>*/}
+      {/*</li>*/}
       {/*<li className={cn(classes.navItem, classes.icon)}>i</li>*/}
     </ul>
   );
