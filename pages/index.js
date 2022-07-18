@@ -187,6 +187,7 @@ const useStyles = createUseStyles({
     margin: '0 0 15px 0',
     marginBottom: 15,
     [media_mobile]: {
+      fontSize: 25,
       width: '80%',
       margin: '0 auto 15px auto',
     },
