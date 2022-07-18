@@ -63,7 +63,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.3 }}
               className={classes.listItem}
             >
-              Hello!
+              Hey!🙋‍♂️
             </motion.li>
             <motion.li
               variants={itemBottom}
@@ -77,22 +77,21 @@ export default function Home() {
               transition={{ duration: 1, delay: 1.2 }}
               className={classes.listItem}
             >
-              I'm a Front-End Developer
+              I'm a <b>Software Engineer.</b>
             </motion.li>
             <motion.li
               variants={itemBottom}
               transition={{ duration: 1, delay: 1.4 }}
               className={classes.listItem}
             >
-              With a passion for{' '}
-              <a
-                className={classes.reactLink}
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @reactjs
-              </a>
+              Which never stops learning.
+            </motion.li>
+            <motion.li
+              variants={itemBottom}
+              transition={{ duration: 1, delay: 1.6 }}
+              className={classes.listItem}
+            >
+              And always looking for new challenges.
             </motion.li>
           </motion.ul>
         </div>
